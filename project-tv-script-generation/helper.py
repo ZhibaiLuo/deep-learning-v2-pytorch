@@ -1,6 +1,7 @@
 import os
 import pickle
 import torch
+import sys
 
 
 SPECIAL_WORDS = {'PADDING': '<PAD>'}
@@ -11,7 +12,7 @@ def load_data(path):
     Load Dataset from File
     """
     input_file = os.path.join(path)
-    with open(input_file, "r") as f:
+    with open(path, "r", encoding='utf-8') as f:
         data = f.read()
 
     return data
